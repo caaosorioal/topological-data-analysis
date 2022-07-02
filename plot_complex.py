@@ -9,6 +9,7 @@ def distance(points):
     ''' This function compute the euclidean distance
         between a set of pointsß '''
     return np.sqrt(np.sum((points[0] - points[1])**2))
+    
 def plot_balls_complex(x, y, alpha, complex_type = 'vietoris_rips', hide_balls = False):
     ''' This function return the plot of the points (x,y), the open ball with radius alpha 
         around every point and the selected complex '''
