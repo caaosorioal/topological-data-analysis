@@ -22,10 +22,24 @@ def plot_balls_complex(x, y, alpha, hide_balls = False):
         pass
     else:
         for i in range(n):
-            circle = plt.Circle((x[i], y[i]), alpha, color = 'gray', alpha = 0.25, linestyle = '--', zorder = 0)
+            circle = plt.Circle(
+                                (x[i], y[i]), 
+                                alpha, 
+                                color = 'gray', 
+                                alpha = 0.25, 
+                                linestyle = '--', 
+                                zorder = 0
+                                )
+
             ax.add_patch(circle)
     
-    ax.scatter(x, y, color = 'black', zorder = 2)
+    ax.scatter(
+                x, 
+                y, 
+                color = 'black', 
+                zorder = 2
+               )
+
     ax.set_xticks([])
     ax.set_yticks([])
     
@@ -40,7 +54,12 @@ def plot_balls_complex(x, y, alpha, hide_balls = False):
             edges_complex.append(pair)
     
     for edge in edges_complex:
-        ax.plot(edge[:, 0], edge[:, 1], color = 'red', zorder = 1)
+        ax.plot(
+                edge[:, 0], 
+                edge[:, 1], 
+                color = 'red', 
+                zorder = 1
+                )
 
 if __name__ == "__main__":
     # Generate random points
