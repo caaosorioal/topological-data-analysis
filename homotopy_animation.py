@@ -15,7 +15,7 @@ def linear_function(x, point1, point2):
 
 # Get the quadratic function passing through point1 and point2 
 def quadratic_function(x, point1, point2, seed = None):
-    ''' This function return the parabola
+    ''' This function return a parabola
         passing through point1 and point2. 
         There are infinitely many possible 
         parabolas, and that's why there
