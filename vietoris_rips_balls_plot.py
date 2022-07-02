@@ -58,7 +58,7 @@ def plot_balls_complex(x, y, alpha, hide_balls = False):
                     zorder = 1
                     )
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     # Generate random points
     alpha = .1
     n = 50
