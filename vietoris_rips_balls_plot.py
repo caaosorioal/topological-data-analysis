@@ -47,7 +47,6 @@ def plot_balls_complex(x, y, alpha, hide_balls = False):
     pairs = np.array(tuple(itertools.product(points, points)))
     
     # Compute the distance between every pair of points and plot the line
-    edges_complex = []
     for pair in pairs:
         if ((distance(pair) <= alpha) and not (pair[0] == pair[1]).all()):
             ax.plot(
