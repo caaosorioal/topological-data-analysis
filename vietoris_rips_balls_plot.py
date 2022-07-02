@@ -10,7 +10,7 @@ def distance(points):
         between a set of pointsß '''
     return np.sqrt(np.sum((points[0] - points[1])**2))
 
-def plot_balls_complex(x, y, alpha, hide_balls = False):
+def plot_balls_vietoris_rips(x, y, alpha, hide_balls = False):
     ''' This function return the plot of the points (x,y), the open ball with radius alpha 
         around every point and the Vietoris-Rips complex '''
 
@@ -63,4 +63,4 @@ if __name__ == '__main__':
     x, y = np.random.rand(2, n)
 
     # Plot the result
-    plot_balls_complex(x, y, alpha, hide_balls = False)
+    plot_balls_vietoris_rips(x, y, alpha, hide_balls = False)
