@@ -9,7 +9,7 @@ def distance(points):
     ''' This function compute the euclidean distance
         between a pair of points. '''
 
-    return np.sqrt((points[0][0] - points[1][0])**2 + (points[0][1] - points[1][1])**2)
+    return np.sqrt(np.sum((points[0] - points[1])**2))
 
 def plot_balls_complex(x, y, alpha, hide_balls = False):
     ''' This function return the plot of the points (x,y), the open ball with radius alpha 
