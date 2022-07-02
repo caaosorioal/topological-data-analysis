@@ -7,7 +7,7 @@ import itertools
 # Euclidean distance
 def distance(points):
     ''' This function compute the euclidean distance
-        between a pair of points. '''
+        between a set of pointsß '''
     return np.sqrt(np.sum((points[0] - points[1])**2))
 
 def plot_balls_complex(x, y, alpha, hide_balls = False):
