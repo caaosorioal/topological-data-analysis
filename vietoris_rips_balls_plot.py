@@ -47,19 +47,16 @@ def plot_balls_complex(x, y, alpha, hide_balls = False):
     points = np.array(list(zip(x, y)))
     pairs = np.array(tuple(itertools.product(points, points)))
     
-    # Compute the distance between every pair of points
+    # Compute the distance between every pair of points and plot the line
     edges_complex = []
     for pair in pairs:
         if ((distance(pair) <= alpha) and not (pair[0] == pair[1]).all()):
-            edges_complex.append(pair)
-    
-    for edge in edges_complex:
-        ax.plot(
-                edge[:, 0], 
-                edge[:, 1], 
-                color = 'red', 
-                zorder = 1
-                )
+            ax.plot(
+                    pair[:, 0], 
+                    pair[:, 1], 
+                    color = 'red', 
+                    zorder = 1
+                    )
 
 if __name__ == "__main__":
     # Generate random points
