@@ -78,7 +78,7 @@ def get_mean_value_f(clusters):
 
 if __name__ == '__main__':
     # Select the files and the path
-    path = '/Users/carlosandresosorioalcalde/Documents/GitHub/topological-data-analysis/data'
+    path = '/Users/carlosandresosorioalcalde/'
     file = 'Saber_11__2019-2.csv'
 
     # Read the data with chunks
