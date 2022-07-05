@@ -37,7 +37,7 @@ def find_intersection(array1, array2):
     
     return df_intersection.shape[0]
 
-# Create the clustering of the cover using DBSCAN
+# Clustering of the cover using DBSCAN
 def clustering_cover(U: list, eps = 0.1, min_samples = 25) -> list:
     clusters = []
     for interval in U:
@@ -138,7 +138,7 @@ if __name__ == '__main__':
     # This is the covering of f(x)
     U = [(min_score + (gain * i) * (delta) / n_intervals, min_score + (1 + gain * i) * (delta)/n_intervals) for i in range(2 * n_intervals)]
 
-    # Create the clustering of every cover
+    # Create the clusters for every set of the cover
     eps = .15
     min_samples = 15
     clusters = clustering_cover(U, eps, min_samples)
