@@ -9,7 +9,7 @@ import plotly.graph_objects as go
 import plotly
 import networkx as nx
 
-# Functions
+# Function to read the data
 def read_data(path, file, chunk_size):
     df_list = []
     with pd.read_csv(join(path, file), chunksize = chunk_size, low_memory = False) as r:
@@ -18,13 +18,13 @@ def read_data(path, file, chunk_size):
     
     return pd.concat(df_list)
 
-# Find the preimage
+# Function to find the preimage of interval
 def condition_preimage(x, tuple):
     if ((x >= tuple[0]) and (x <= tuple[1])):
         return True
     return False
 
-# Find the intersection between two sets of points
+# Find the intersection between two sets of 3-dimensional points
 def find_intersection(array1, array2):
     columns = ['d1', 'd2', 'd3']
     df_temp_1 = pd.DataFrame(data = array1, columns = columns)
@@ -37,7 +37,7 @@ def find_intersection(array1, array2):
     
     return df_intersection.shape[0]
 
-# Clustering of the cover using DBSCAN
+# Clustering the cover using DBSCAN
 def clustering_cover(U: list, eps = 0.1, min_samples = 25) -> list:
     clusters = []
     for interval in U:
@@ -56,8 +56,9 @@ def clustering_cover(U: list, eps = 0.1, min_samples = 25) -> list:
         
     return clusters
 
-    def f(x):
-        return np.dot(coef, x)
+# f
+def f(x):
+    return np.dot(coef, x)
 
 # Create the nerve based on the clusters
 def create_nerve(clusters):
@@ -85,7 +86,7 @@ if __name__ == '__main__':
     chunk_size = 10**5
     df_icfes = read_data(path, file, chunk_size)
 
-    # Select columns with deal with (just "PUNT_" columns)
+    # Select the columns to deal with (just "PUNT_" columns)
     columns = [column for column in df_icfes.columns if 'PUNT_' in column]
 
     # Cutted data with columns
@@ -128,14 +129,14 @@ if __name__ == '__main__':
     fig.write_html(join(path, 'file.html'))
     fig.show()
 
-    # Create the covering of f(x)
+    # Create the covering for f(x)
     n_intervals = 10
     min_score = y.min()
     max_score = y.max()
     delta = max_score - min_score
     gain = 0.5
 
-    # This is the covering of f(x)
+    # This is the covering for f(x)
     U = [(min_score + (gain * i) * (delta) / n_intervals, min_score + (1 + gain * i) * (delta)/n_intervals) for i in range(2 * n_intervals)]
 
     # Create the clusters for every set of the cover
