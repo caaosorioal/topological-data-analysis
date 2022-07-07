@@ -18,7 +18,7 @@ def read_data(path, file, chunk_size):
     
     return pd.concat(df_list)
 
-# Function to find the preimage of interval
+# Function to get the preimage of some interval
 def condition_preimage(x, tuple):
     if ((x >= tuple[0]) and (x <= tuple[1])):
         return True
